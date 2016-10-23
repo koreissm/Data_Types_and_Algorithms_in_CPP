@@ -1,3 +1,5 @@
+#ifndef SIMPLE_LINKED_LIST__
+#define SIMPLE_LINKED_LIST__
 #include <iostream>
 
 /*
@@ -5,39 +7,43 @@
  *  Creation : Sunday 23 october 2016, 13:04
  * 
  *
- *  inthis is a tiny lib that implements a GENERIC simple linked list (single link)
+ *  This is a tiny lib that implements a GENERIC simple linked list (single link)
 */
 
 //Defining the structure of the list
-
+template<typename T>
 struct Node {
-    int _data;
-    Node *_next;
+    T _data;
+    Node<T> *_next;
 };
 
 //Basic operations on lists
 
+template<typename T>
+void headInsert (const T data, Node<T>* &list);
 
-void headInsert (const int data, Node* &list);
+template<typename T>
+void tailInsert (const T data, Node<T>* &list);
 
+template<typename T>
+void insert (const T data, int pos, Node<T>* &list);
 
-void tailInsert (const int data, Node* &list);
+template<typename T>
+void headDelete (Node<T>* &list);
 
-
-void insert (const int data, int pos, Node* &list);
-
-
-void headDelete (Node* &list);
-
-
-void tailDelete (Node* &list);
+template<typename T>
+void tailDelete (Node<T>* &list);
 
 //Delete a specific element in the list
+template<typename T>
+void deleteL (const T data, Node<T>* &list);
 
-void deleteL (const int data, Node* &list);
+template<typename T>
+void printList (Node<T>* list);
 
+template<typename T>
+int size (Node<T>* list); 
 
-void printList (Node* list);
+void test();
 
-
-int size (Node* list); 
+#endif

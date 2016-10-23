@@ -1,12 +1,11 @@
 #include "SimpleLinkedList.h"
-#include <iostream>
 #include <assert.h>
 
 using namespace std;
 
 int main() {
 
-    Node* list = new Node; //Creating a list
+    Node<int>* list = new Node<int>; //Creating a list
     list->_next = nullptr;
     list->_data = 9;
 
@@ -16,7 +15,7 @@ int main() {
     headInsert(4, list); 
     headInsert(3, list); 
     cout << "\t\t5 head insertion and 1 tail insertion" << endl;
-    tailInsert(10, list);*/ 
+    tailInsert(10, list); 
 
     printList(list);
     
@@ -45,5 +44,6 @@ int main() {
     assert(size(list) == 4);
     //List current state : 4, 12, 6, 9
 
+    delete list;
     return 0;
 }

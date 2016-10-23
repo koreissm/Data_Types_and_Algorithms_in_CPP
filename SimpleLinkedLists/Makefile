@@ -6,3 +6,6 @@ debug : SimpleLinkedList.o
 
 SimpleLinkedList.o:
 	g++ -c SimpleLinkedList.cpp
+
+clean:
+	rm -f *.o test
