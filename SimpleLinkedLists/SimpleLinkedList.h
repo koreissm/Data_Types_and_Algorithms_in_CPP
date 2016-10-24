@@ -15,35 +15,25 @@ template<typename T>
 struct Node {
     T _data;
     Node<T> *_next;
+    
+    //Basic operations on lists
+
+    void add (const T data, Node<T>* &list); //Adds an element in the head of the list
+
+    void add_last (const T data, Node<T>* &list);
+
+    void insert (const T data, int pos, Node<T>* &list);
+
+    T pop (Node<T>* &list); //Remove an element from the head of the list
+
+    T pop_last (Node<T>* &list);
+
+    void deleteL (const T data, Node<T>* &list); //Delete a specific element in the list
+
+    void print (Node<T>* list);
+
+    int size (Node<T>* list); 
+
 };
-
-//Basic operations on lists
-
-template<typename T>
-void headInsert (const T data, Node<T>* &list);
-
-template<typename T>
-void tailInsert (const T data, Node<T>* &list);
-
-template<typename T>
-void insert (const T data, int pos, Node<T>* &list);
-
-template<typename T>
-void headDelete (Node<T>* &list);
-
-template<typename T>
-void tailDelete (Node<T>* &list);
-
-//Delete a specific element in the list
-template<typename T>
-void deleteL (const T data, Node<T>* &list);
-
-template<typename T>
-void printList (Node<T>* list);
-
-template<typename T>
-int size (Node<T>* list); 
-
-void test();
 
 #endif
