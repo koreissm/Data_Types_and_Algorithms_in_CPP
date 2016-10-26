@@ -4,6 +4,11 @@
 using namespace std;
 
 template<typename T>
+int empty (Node<T>* &list) {
+    return list == nullptr;
+}
+
+template<typename T>
 void add (const T data, Node<T>* &list) {
     //Creating a new node
     Node<T>* node = new Node<T>;
@@ -23,7 +28,7 @@ void add_last (const T data, Node<T>* &list) {
     node->_next = nullptr;
 
     //Going to the end of the list
-    while (listCopy->_next != nullptr) {
+    while (!empty(listCopy->_next)) {
         listCopy = listCopy->_next;
     }
 
@@ -55,10 +60,10 @@ template<typename T>
 T pop_last (Node<T>* &list) {
     T element;
     Node<T> *beforeLast = list, *last = list->_next;
-    if (list->_next == nullptr) {list = nullptr;} //List with one element
+    if (empty(list->_next)) {list = nullptr;} //List with one element
     else {
         //Going the end of the list
-        while (last->_next != nullptr) {
+        while (!empty(last->_next)) {
             beforeLast = last;
             last = last->_next;
         }
@@ -74,13 +79,13 @@ template<typename T>
 void deleteL (const T data, Node<T>* &list) {
     Node<T>* listCopy = list->_next, *before = list;
     //Searching the element we want to delete
-    while (listCopy != nullptr && listCopy->_data != data) {
+    while (!empty(listCopy) && listCopy->_data != data) {
         before = listCopy;
         listCopy = listCopy->_next;
     }
 
     //Delete the actual element
-    if (listCopy != nullptr) {
+    if (!empty(listCopy)) {
         before->_next = listCopy->_next;
     }
 }
@@ -90,7 +95,7 @@ void print (Node<T>* list) {
     int l = 0;
     cout << "Current state of the list : ";
     if (list == nullptr) {cout << "EMPTY";}
-    while (list != nullptr) {
+    while (!empty(list)) {
         cout << list->_data <<  ", ";
         list = list->_next;
         l++;
@@ -101,7 +106,7 @@ void print (Node<T>* list) {
 template<typename T>
 int size (Node<T>* list) {
     int l = 0;
-    while (list != nullptr) {
+    while (!empty(list)) {
         l++;
         list = list->_next;
     }

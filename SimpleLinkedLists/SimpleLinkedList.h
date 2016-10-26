@@ -18,6 +18,8 @@ struct Node {
     
     //Basic operations on lists
 
+    int empty (Node<T>* &list);
+
     void add (const T data, Node<T>* &list); //Adds an element in the head of the list
 
     void add_last (const T data, Node<T>* &list);
