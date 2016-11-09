@@ -1,5 +1,5 @@
 test : SimpleLinkedList.o
-	g++ SimpleLinkedList.o Main.cpp -o test
+	g++ Main.cpp -o test
 
 debug : SimpleLinkedList.o
 	g++ -g SimpleLinkedList.o Main.cpp -o test
