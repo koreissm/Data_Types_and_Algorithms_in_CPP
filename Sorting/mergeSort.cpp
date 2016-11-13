@@ -2,6 +2,7 @@
 
 using namespace std;
 
+int size = 9;
 int arr[9] = {6, 5, 1, 3, 8, 4, 7, 9, 2};
 int newArray[9];
 //double array[9] = {6.2, 5.1, 1, 3, 8, 4, 7, 9, 2};
@@ -67,16 +68,17 @@ bool assertSorted(T *array, int size) {
 }
 
 int main() {
-    int size = 9;
 
+    printf("Array before being sorted : ");
     printArray(arr, size);
 
-    mergeSort(0, size);
+    mergeSort(0, size - 1);
 
+    printf("After sorting : ");
     printArray(newArray, size);
 
     //Asserting array's been sorted
-    if (assertSorted(arr, size)) cout << "OK\n";
+    if (assertSorted(newArray, size)) cout << "OK\n";
     else  cout << "KO\n";
     
     return 0;
