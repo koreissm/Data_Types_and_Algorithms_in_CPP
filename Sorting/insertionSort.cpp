@@ -20,21 +20,17 @@ void swap(int &a, int &b) {
 }
 
 template <typename T>
-void selectionSort(T *array, int size) {
+void insertionSort(T *array, int size) {
     int i, j;
     for (i = 0; i < size; i++) {
-        //Searching for the min in the right of the array
-        int min = MIN;
-        int index = -1;
-        for (j = i; j < size; j++) {
-            if (array[j] < min) {
-                min = array[j];
-                index = j;
-            }
-        }
+        int tmp = array[i];
+        j = i - 1;
 
-        //Swapping
-        swap(array[i], array[index]);
+        while (j >= 0 && array[j] > tmp) {
+            array[j + 1] = array[j];
+            j--;
+        }
+        array[j + 1] = tmp;
     }
 }
 
@@ -44,7 +40,7 @@ int main() {
     printArray(array, 8);
 
     //Sorting the array of size 8
-    selectionSort(array, 8);
+    insertionSort(array, 8);
 
     printf("Array after being sorted : ");
     printArray(array, 8);
