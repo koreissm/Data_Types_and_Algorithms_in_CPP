@@ -46,7 +46,7 @@ void printArray(const T *array, const int &size) {
 }
 
 void mergeSort(int lo, int hi) {
-    if (lo < hi) {
+    if (lo == hi) return;
     
     int middle = (hi + lo) / 2;
 
@@ -54,8 +54,6 @@ void mergeSort(int lo, int hi) {
     mergeSort(middle + 1, hi);
 
     merge(lo, middle, hi);    
-    }
-    else return;
 }
 
 template <typename T>
