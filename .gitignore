@@ -4,6 +4,11 @@
 *.obj
 *.elf
 
+# Ignore `bin` dir
+bin/
+# or
+*/bin/*
+
 # Precompiled Headers
 *.gch
 *.pch

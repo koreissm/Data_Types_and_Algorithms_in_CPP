@@ -1,10 +1,13 @@
-all: quickSort mergeSort
+all: quickSort mergeSort selectionSort
 
 quickSort: quickSort.cpp
-	g++ -o quickSort quickSort.cpp
+	g++ -o bin/quickSort quickSort.cpp
 
 mergeSort: mergeSort.cpp
-	g++ -o mergeSort mergeSort.cpp
+	g++ -o bin/mergeSort mergeSort.cpp
+
+selectionSort: selectionSort.cpp
+	g++ -o bin/selectionSort selectionSort.cpp
 
 clean:
-	rm -fr mergeSort quickSort *.o
+	rm -fr bin/* selectionSort *.o
