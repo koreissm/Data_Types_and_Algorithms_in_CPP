@@ -1,4 +1,7 @@
-all: quickSort mergeSort selectionSort insertionSort
+all: quickSort mergeSort selectionSort insertionSort bubbleSort
+
+bubbleSort: bubbleSort.cpp
+	g++ -o bin/bubbleSort bubbleSort.cpp
 
 insertionSort: insertionSort.cpp
 	g++ -o bin/insertionSort insertionSort.cpp

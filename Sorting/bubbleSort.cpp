@@ -10,18 +10,27 @@ void printArray(const T *array, const int &size) {
     cout << "\n";
 }
 
-template <typename T>
-void insertionSort(T *array, int size) {
-    int i, j;
-    for (i = 0; i < size; i++) {
-        int tmp = array[i];
-        j = i - 1;
+//Swapping two values
+void swap(int &a, int &b) {
+    int tmp = a;
+    a = b;
+    b = tmp;
+}
 
-        while (j >= 0 && array[j] > tmp) {
-            array[j + 1] = array[j];
-            j--;
+template <typename T>
+void bubbleSort(T *array, int size) {
+    int i;
+    bool swapped = true;
+
+    //Performing the algo while a swap has been done
+    while (swapped) {
+        swapped = false;
+        for (i = 0; i < size; i++) {
+            if (array[i] > array[i + 1] && i < size - 1) {
+                swap(array[i], array[i + 1]);
+                swapped = true;
+            }
         }
-        array[j + 1] = tmp;
     }
 }
 
@@ -31,7 +40,7 @@ int main() {
     printArray(array, 8);
 
     //Sorting the array of size 8
-    insertionSort(array, 8);
+    bubbleSort(array, 8);
 
     printf("Array after being sorted : ");
     printArray(array, 8);
