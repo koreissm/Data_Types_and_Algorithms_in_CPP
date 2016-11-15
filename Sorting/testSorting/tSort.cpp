@@ -9,7 +9,7 @@ int main() {
     array.print();
 
     //Sorting the array of size 8
-    array.doSelectionSort();
+    array.doCountSort();
 
     printf("Array after being sorted : ");
     array.print();

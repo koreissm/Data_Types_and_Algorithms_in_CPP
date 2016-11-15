@@ -1,4 +1,5 @@
 #include <iostream>
+#include <map>
 
 #define MIN 1000000000
 
@@ -173,6 +174,32 @@ template <class T> class Array {
 
                 //Swapping
                 swap(_arr[i], _arr[index]);
+            }
+        }
+
+        /**
+         * C O U N T   S O R T
+         **/
+        void doCountSort() {
+            int i;
+            map<T, int> count;
+
+            //Filling the map
+            for (i = 0; i < _size; i++) {
+                if (count.find(_arr[i]) == count.end()) //Not in map
+                    count[_arr[i]] = 1;
+                else
+                    count[_arr[i]]++;
+            }
+
+            //Building the new array
+            i = 0;
+            typedef typename std::map<T, int>::iterator iterator;
+            for (iterator iter = count.begin(); iter != count.end(); ++iter) {
+                while (iter->second > 0) {
+                    _arr[i++] = iter->first;
+                    iter->second--;
+                }
             }
         }
 };
