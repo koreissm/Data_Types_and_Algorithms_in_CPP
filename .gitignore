@@ -4,6 +4,8 @@
 *.obj
 *.elf
 
+*.swp
+
 # Ignore `bin` dir
 bin/
 # or
