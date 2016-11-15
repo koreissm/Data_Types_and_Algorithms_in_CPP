@@ -63,29 +63,29 @@ template <class T> class Array {
          * M E R G E   S O R T
          */
         void merge(int lo, int mid, int hi) {
-        int i = lo, j = mid + 1, k = lo;
-        
-        while (i <= mid && j <= hi) {
-            if (_arr[i] < _arr[j]) {
+            int i = lo, j = mid + 1, k = lo;
+            
+            while (i <= mid && j <= hi) {
+                if (_arr[i] < _arr[j]) {
+                    _newArray[k++] = _arr[i++];
+                }
+                else {
+                    _newArray[k++] = _arr[j++];
+                }
+            }
+
+            //If array1 bigger than array2
+            while (i <= mid) {
                 _newArray[k++] = _arr[i++];
             }
-            else {
+            //If array2 bigger than array1
+            while (j <= hi) {
                 _newArray[k++] = _arr[j++];
             }
-        }
 
-        //If array1 bigger than array2
-        while (i <= mid) {
-            _newArray[k++] = _arr[i++];
-        }
-        //If array2 bigger than array1
-        while (j <= hi) {
-            _newArray[k++] = _arr[j++];
-        }
-
-        //Updating the old array
-        for (i = lo; i <= hi; i++)
-            _arr[i] = _newArray[i];
+            //Updating the old array
+            for (i = lo; i <= hi; i++)
+                _arr[i] = _newArray[i];
 
         }
 
