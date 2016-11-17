@@ -3,12 +3,14 @@
 Implemented generic sorting class that works with integers, floating numbers, chars and strings
 
 Here are the sorting methods that are implemented in it :
-    1. Selection sort
-    2. Insertion sort
-    3. Bubble sort
-    4. Quick sort
-    5. Merge sort
-    6. Count sort
+    - [x] Selection sort
+    - [x] Insertion sort
+    - [x] Bubble sort
+    - [x] Quick sort
+    - [x] Merge sort
+    - [x] Count sort
+    - [ ] R-Quick sort
+    - [ ] Radix sort
 
 Each sorting method is implemented as methods of the Array class.
 
