@@ -3,6 +3,7 @@
 Implemented generic sorting class that works with integers, floating numbers, chars and strings
 
 Here are the sorting methods that are implemented in it :
+
     - [x] Selection sort
     - [x] Insertion sort
     - [x] Bubble sort
