@@ -18,9 +18,11 @@ Each sorting method is implemented as methods of the Array class.
 ##How to use it ?
 
 Compile with :
+
     make all
 
 Binaries are created in the "bin" directory
 
 Execute with:
+
     ./bin/sort
