@@ -1,11 +1,16 @@
-test : SimpleLinkedList.o
-	g++ Main.cpp -o test
+all : linkedlist stack queue deque
 
-debug : SimpleLinkedList.o
-	g++ -g SimpleLinkedList.o Main.cpp -o test
+linkedlist : SimpleLinkedList.cpp ./tests/tLinkedList.cpp
+	g++ ./tests/tLinkedList.cpp SimpleLinkedList.cpp -o ./bin/linkedlist
 
-SimpleLinkedList.o:
-	g++ -c SimpleLinkedList.cpp
+stack : stack.cpp ./tests/tStack.cpp util.cpp
+	g++ ./tests/tStack.cpp stack.cpp util.cpp -o ./bin/stack
+
+queue : queue.cpp ./tests/tQueue.cpp
+	g++ ./tests/tQueue.cpp queue.cpp -o ./bin/queue
+
+deque : deque.cpp ./tests/tDeque.cpp
+	g++ ./tests/tDeque.cpp deque.cpp -o ./bin/deque
 
 clean:
-	rm -f *.o test
+	rm -fr *.o ./bin/*
